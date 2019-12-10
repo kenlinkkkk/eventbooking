@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<winginx>
+  <project>
+    <name>dev.event.vn</name>
+    <url>http://dev.event.vn/</url>
+    <root>home/dev.event.vn</root>
+  </project>
+</winginx>
