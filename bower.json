@@ -1,0 +1,18 @@
+{
+  "name": "dev.event.vn",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Thanh Tung Nguyen <tungnt15ptit@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/kenlinkkkk/eventbooking",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
