@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
             return view('admin.index');
         })->name('index');
 
+        /** User Manager */
         Route::prefix('user')->name('user.')->group(function () {
             Route::get('/', 'Admin\UserController@index')->name('index');
             Route::get('add', 'Admin\UserController@add')->name('add');
@@ -31,6 +32,17 @@ Route::middleware('auth')->group(function () {
             Route::post('create', 'Admin\UserController@create')->name('create');
             Route::post('update/{id_user}', 'Admin\UserController@update')->name('update');
             Route::post('delete/{id_user}', 'Admin\UserController@delete')->name('delete');
+        });
+
+        /** Center Manager */
+        Route::prefix('center')->name('center.')->group(function () {
+            Route::get('/', 'Admin\CenterController@index')->name('index');
+            Route::get('add', 'Admin\CenterController@add')->name('add');
+            Route::get('edit/{id_center}', 'Admin\CenterController@edit')->name('edit');
+
+            Route::post('create', 'Admin\Controller@create')->name('create');
+            Route::post('update/{id_center}', 'Admin\CenterController@update')->name('update');
+            Route::post('delete/{id_center}', 'Admin\CenterController@delete')->name('delete');
         });
     });
 });
