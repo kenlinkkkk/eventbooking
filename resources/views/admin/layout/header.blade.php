@@ -48,7 +48,7 @@
                         <div class="widget-content-left">
                             <div class="btn-group">
                                 <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="p-0 btn">
-                                    <img width="42" class="rounded-circle" src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}" alt="">
+                                    <img width="42" class="rounded-circle" src="{{ Auth::user()->avatar }}" alt="">
                                     <i class="fa fa-angle-down ml-2 opacity-8"></i>
                                 </a>
                                 <div tabindex="-1" role="menu" aria-hidden="true" class="rm-pointers dropdown-menu-lg dropdown-menu dropdown-menu-right">
@@ -59,11 +59,11 @@
                                                 <div class="widget-content p-0">
                                                     <div class="widget-content-wrapper">
                                                         <div class="widget-content-left mr-3">
-                                                            <img width="42" class="rounded-circle" src="{{ \Illuminate\Support\Facades\Auth::user()->avatar }}" alt="">
+                                                            <img width="42" class="rounded-circle" src="{{ Auth::user()->avatar }}" alt="">
                                                         </div>
                                                         <div class="widget-content-left">
-                                                            <div class="widget-heading">{{ \Illuminate\Support\Facades\Auth::user()->name }}</div>
-                                                            <div class="widget-subheading opacity-8">{{ \Illuminate\Support\Facades\Auth::user()->user_name }}</div>
+                                                            <div class="widget-heading">{{ Auth::user()->name }}</div>
+                                                            <div class="widget-subheading opacity-8">{{ Auth::user()->user_name }}</div>
                                                         </div>
                                                         <div class="widget-content-right mr-2">
                                                             <form method="post" action="{{ route('logout') }}">
@@ -76,12 +76,25 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="scroll-area-xs" style="height: 150px;">
+                                        <div class="scrollbar-container ps">
+                                            <ul class="nav flex-column">
+                                                <li class="nav-item-header nav-item">Activity</li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">Change Password</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="javascript:void(0);" class="nav-link">Profile</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="widget-content-left  ml-3 header-user-info">
-                            <div class="widget-heading">{{ \Illuminate\Support\Facades\Auth::user()->name }}</div>
-                            <div class="widget-subheading">{{ \Illuminate\Support\Facades\Auth::user()->user_name }}</div>
+                            <div class="widget-heading">{{ Auth::user()->name }}</div>
+                            <div class="widget-subheading">{{ Auth::user()->user_name }}</div>
                         </div>
                     </div>
                 </div>

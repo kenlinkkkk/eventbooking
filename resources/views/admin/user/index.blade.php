@@ -18,7 +18,7 @@
                             <th>Name</th>
                             <th>Role</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <th class="text-right">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -34,7 +34,7 @@
                                 @else
                                     <td><input name="status" type="checkbox" data-on="On" data-off="Off" data-toggle="toggle" data-size="mini" value="0" id="{{ $user->id }}" disabled></td>
                                 @endif
-                                <td>
+                                <td class="text-right">
                                     <form id="form-{{$user->id}}" method="post" action="{{ route('admin.user.delete', $user->id) }}">
                                         @csrf
                                         <a href="{{ route('admin.user.edit', $user->id) }}" class="btn btn-sm btn-primary btn-icon position-relative"><i class="pe-7s-pen btn-icon-wrapper"></i> Edit</a>
