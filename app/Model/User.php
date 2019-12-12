@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'user_name', 'avatar', 'password', 'role'
+        'name', 'user_name', 'avatar', 'password', 'role', 'id_center'
     ];
 
     /**
@@ -36,4 +36,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function center()
+    {
+        return $this->belongsTo(Center::class);
+    }
 }

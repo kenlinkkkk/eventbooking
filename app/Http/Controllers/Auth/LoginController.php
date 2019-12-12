@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginRequest;
 use http\Env\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/admin';
 
     /**
      * Create a new controller instance.
@@ -44,7 +45,7 @@ class LoginController extends Controller
         return view('admin.login');
     }
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
         if (Auth::attempt([
             'user_name' => $request->user_name,
@@ -52,11 +53,11 @@ class LoginController extends Controller
         ])) {
             $user = Auth::user();
 
-            return;
+            return redirect(route('admin.index'));
         } else {
             $request->session()->flash('login-error');
 
-            return;
+            return redirect(route('login'));
         }
     }
 }
