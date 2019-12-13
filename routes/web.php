@@ -40,7 +40,7 @@ Route::middleware('auth')->group(function () {
             Route::get('add', 'Admin\CenterController@add')->name('add');
             Route::get('edit/{id_center}', 'Admin\CenterController@edit')->name('edit');
 
-            Route::post('create', 'Admin\Controller@create')->name('create');
+            Route::post('create', 'Admin\CenterController@create')->name('create');
             Route::post('update/{id_center}', 'Admin\CenterController@update')->name('update');
             Route::post('delete/{id_center}', 'Admin\CenterController@delete')->name('delete');
         });

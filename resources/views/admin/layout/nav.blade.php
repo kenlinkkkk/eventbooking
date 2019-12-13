@@ -40,7 +40,7 @@
                     <a href="#"><i class="metismenu-icon pe-7s-config"></i>Manager<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
                     <ul>
                         <li><a href="{{ route('admin.user.index') }}"><i class="metismenu-icon"></i>User</a></li>
-                        <li><a href="{{ route('admin.user.index') }}"><i class="metismenu-icon"></i>Center</a></li>
+                        <li><a href="{{ route('admin.center.index') }}"><i class="metismenu-icon"></i>Center</a></li>
                     </ul>
                 </li>
             @endif

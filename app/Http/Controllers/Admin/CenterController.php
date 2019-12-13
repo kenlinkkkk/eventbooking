@@ -8,6 +8,7 @@ use App\Repositories\Admin\CenterEloquentRepository;
 use App\Repositories\Admin\UserEloquentRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CenterController extends Controller
 {
@@ -19,31 +20,70 @@ class CenterController extends Controller
 
     public function index()
     {
+        $center = $this->centerEloquentRepository->getAll();
 
+        $data = compact(
+            'centers'
+        );
+
+        return view('admin.center.index', $data);
     }
 
-    public function add()
+    public function add(CenterAddRequest $request)
     {
-
+        return view('admin.center.add');
     }
 
     public function edit($id_center)
     {
+        $center = $this->centerEloquentRepository->find($id_center);
 
+        $data = compact(
+            'center'
+        );
+
+        return view('admin.center.edit', $data);
     }
 
     public function create(CenterAddRequest $request)
     {
+        $data = $request->except('_token');
 
+        $result = $this->centerEloquentRepository->create($data);
+
+        if ($result) {
+            $request->session()->flash('success', 'Thêm mới thành công');
+        } else {
+            $request->session()->flash('error', 'Thêm mới không thành công');
+        }
+
+        return redirect(route('admin.center.index'));
     }
 
     public function update(CenterUpdateRequest $request, $id_center)
     {
+        $data = $request->except('_token');
 
+        $result = $this->centerEloquentRepository->update($id_center, $data);
+
+        if ($result) {
+            $request->session()->flash('success', 'Cập nhật thành công');
+        } else {
+            $request->session()->flash('error', 'Cập nhật không thành công');
+        }
+        return redirect(route('admin.center.index'));
     }
 
     public function delete(Request $request, $id_center)
     {
+        $result = $this->centerEloquentRepository->delete($id_center);
 
+        if ($result) {
+            $request->session()->flash('success', 'Xóa thành công');
+        } else {
+            $request->session()->flash('success', 'Xóa không thành công');
+        }
+
+        return redirect()->back();
     }
 }
