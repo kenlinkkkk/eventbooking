@@ -13,6 +13,7 @@ class Center extends Model
         'short_tag',
         'address',
         'phone',
+        'thumbnail',
         'pictures',
         'description'
     ];

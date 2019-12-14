@@ -20,7 +20,7 @@
 <body>
 <div class="app-container app-theme-white body-tabs-shadow fixed-header fixed-sidebar fixed-footer">
     <!-- header -->
-    @include('admin.layout.header');
+    @include('admin.layout.header')
     <!-- end header -->
     <div class="app-main">
         <div class="app-sidebar sidebar-shadow bg-dark sidebar-text-light">
@@ -29,9 +29,9 @@
                 <div class="header__pane ml-auto">
                     <div>
                         <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
-									<span class="hamburger-box">
-										<span class="hamburger-inner"></span>
-									</span>
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner"></span>
+                            </span>
                         </button>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
 <script src="{{ asset('assets/scripts/iconPicker.js') }}"></script>
 <script type="text/javascript" src="{{ asset('assets/scripts/js.js') }}"></script>
-<script src="{{ asset('assets/ckeditor5/ckeditor.js') }}"></script>
+<script src="{{ asset('assets/plugins/tinymce/tinymce.min.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/js/dropify.min.js"></script>
 <script>
     @if (session('success'))

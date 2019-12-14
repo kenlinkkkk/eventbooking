@@ -81,10 +81,10 @@
                                             <ul class="nav flex-column">
                                                 <li class="nav-item-header nav-item">Activity</li>
                                                 <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Change Password</a>
+                                                    <a href="#" class="nav-link">Change Password</a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">Profile</a>
+                                                    <a href="#" class="nav-link">Profile</a>
                                                 </li>
                                             </ul>
                                         </div>

@@ -20,7 +20,7 @@ class CenterController extends Controller
 
     public function index()
     {
-        $center = $this->centerEloquentRepository->getAll();
+        $centers = $this->centerEloquentRepository->getAll();
 
         $data = compact(
             'centers'
@@ -49,6 +49,14 @@ class CenterController extends Controller
     {
         $data = $request->except('_token');
 
+        if ($request->hasFile('thumbnail')) {
+            $data['thumbnail'] = upload($request->thumbnail, 1);
+        }
+
+        if ($request->hasFile('pictures')) {
+            $data['pictures'] = upload($request->pictures, 2);
+        }
+
         $result = $this->centerEloquentRepository->create($data);
 
         if ($result) {
@@ -63,6 +71,14 @@ class CenterController extends Controller
     public function update(CenterUpdateRequest $request, $id_center)
     {
         $data = $request->except('_token');
+
+        if ($request->hasFile('thumbnail')) {
+            $data['thumbnail'] = upload($request->thumbnail, 1);
+        }
+
+        if ($request->hasFile('pictures')) {
+            $data['pictures'] = upload($request->pictures, 2);
+        }
 
         $result = $this->centerEloquentRepository->update($id_center, $data);
 

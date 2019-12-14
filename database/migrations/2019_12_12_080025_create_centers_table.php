@@ -19,6 +19,7 @@ class CreateCentersTable extends Migration
             $table->string('short_tag', 255);
             $table->string('address', 255);
             $table->string('phone', 255);
+            $table->string('thumbnail', 255);
             $table->json('pictures');
             $table->longText('description')->nullable();
             $table->timestamps();
