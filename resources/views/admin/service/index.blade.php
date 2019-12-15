@@ -1,12 +1,12 @@
 @extends('admin.layout.layout')
-@section('title'){{"Center Manager"}}@endsection
+@section('title'){{"Service Manager"}}@endsection
 @section('content')
     <div id="user-table">
         <div class="col-12">
             <div class="main-card mb-3 card">
                 <div class="card-header d-flex justify-content-between">
-                    <h5 class="card-title">Center Manager</h5>
-                    <a href="{{ route('admin.center.add') }}" class="mb-2 mr-2 btn-icon btn btn-sm btn-success text-white"><i class="pe-7s-add-user btn-icon-wrapper"></i> Add</a>
+                    <h5 class="card-title">Service Manager</h5>
+                    <a href="{{ route('admin.service.add') }}" class="mb-2 mr-2 btn-icon btn btn-sm btn-success text-white"><i class="pe-7s-add-user btn-icon-wrapper"></i> Add</a>
                 </div>
                 <div class="card-body table-responsive">
                     <table class="mb-0 table table-hover">
@@ -14,25 +14,24 @@
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Address</th>
-                            <th>Phone</th>
+                            <th>Price</th>
                             <th>Thumbnail</th>
+                            <th>Status</th>
                             <th class="text-right">Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach ($centers as $center)
+                        @foreach ($services as $service)
                             <tr>
-                                <td>{{ $center->id }}</td>
-                                <td>{{ $user->name }}</td>
-                                <td>{{ $user->address }}</td>
-                                <td>{{ $user->phone }}</td>
-                                <td><img src="{{ asset($user->thumbnail) }}" alt="avatar" class="rounded" style="width: 36px"></td>
+                                <td>{{ $service->id }}</td>
+                                <td>{{ $service->name }}</td>
+                                <td>{{ $service->price }}</td>
+                                <td><img src="{{ asset($service->thumbnail) }}" alt="avatar" class="rounded" style="width: 36px"></td>
                                 <td class="text-right">
-                                    <form id="form-{{$center->id}}" method="post" action="{{ route('admin.center.delete', $center->id) }}">
+                                    <form id="form-{{$service->id}}" method="post" action="{{ route('admin.service.delete', $service->id) }}">
                                         @csrf
-                                        <a href="{{ route('admin.center.edit', $center->id) }}" class="btn btn-sm btn-primary btn-icon position-relative"><i class="pe-7s-pen btn-icon-wrapper"></i> Edit</a>
-                                        <button centerId="{{ $center->id }}" class="btn btn-sm btn-icon btn-danger btn-delete"><i class="lnr-cross-circle"></i></button>
+                                        <a href="{{ route('admin.service.edit', $service->id) }}" class="btn btn-sm btn-primary btn-icon position-relative"><i class="pe-7s-pen btn-icon-wrapper"></i> Edit</a>
+                                        <button serviceId="{{ $service->id }}" class="btn btn-sm btn-icon btn-danger btn-delete"><i class="lnr-cross-circle"></i></button>
                                     </form>
                                 </td>
                             </tr>
@@ -54,7 +53,7 @@
         });
         $("body").on("click", ".btn-delete", function(e){
             e.preventDefault();
-            let id = $(this).attr('centerId');
+            let id = $(this).attr('serviceId');
             swal({
                 title: "Are you sure?",
                 text: "You can not rollback this",

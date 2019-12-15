@@ -44,5 +44,16 @@ Route::middleware('auth')->group(function () {
             Route::post('update/{id_center}', 'Admin\CenterController@update')->name('update');
             Route::post('delete/{id_center}', 'Admin\CenterController@delete')->name('delete');
         });
+
+        /** Service Manager */
+        Route::prefix('service')->name('service.')->group(function () {
+            Route::get('/', 'Admin\ServiceController@index')->name('index');
+            Route::get('add', 'Admin\ServiceController@add')->name('add');
+            Route::get('edit/{id_service}', 'Admin\ServiceController@edit')->name('edit');
+
+            Route::post('create', 'Admin\ServiceController@create')->name('create');
+            Route::post('update/{id_service}', 'Admin\ServiceController@update')->name('update');
+            Route::post('delete/{id_service}', 'Admin\ServiceControoler@delete')->name('delete');
+        });
     });
 });
