@@ -57,3 +57,7 @@ Route::middleware('auth')->group(function () {
         });
     });
 });
+
+Route::prefix('/')->name('home.')->group(function () {
+    Route::get('/', 'Front\HomeController@index')->name('index');
+});
