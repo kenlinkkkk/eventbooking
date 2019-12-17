@@ -49,6 +49,15 @@ class CenterController extends Controller
     {
         $data = $request->except('_token');
 
+        $address = [
+            'street' => $data['street'],
+            'county' => $data['county'],
+            'district' => $data['district'],
+            'city' => $data['city'],
+        ];
+
+        $data['address'] = json_encode($address);
+        $data['short_tag'] = sluggify($data['name'], 96);
         if ($request->hasFile('thumbnail')) {
             $data['thumbnail'] = upload($request->thumbnail, 1);
         }
@@ -71,6 +80,15 @@ class CenterController extends Controller
     public function update(CenterUpdateRequest $request, $id_center)
     {
         $data = $request->except('_token');
+
+        $address = [
+            'street' => $data['street'],
+            'county' => $data['county'],
+            'district' => $data['district'],
+            'city' => $data['city'],
+        ];
+
+        $data['address'] = json_encode($address);
 
         if ($request->hasFile('thumbnail')) {
             $data['thumbnail'] = upload($request->thumbnail, 1);

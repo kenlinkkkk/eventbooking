@@ -18,9 +18,23 @@
                                 <label for="name">Tên</label>
                                 <input type="text" class="form-control" name="name" required value="{{ $center->name }}">
                             </div>
-                            <div class="position-relative form-group">
-                                <label for="address">Địa chỉ</label>
-                                <input type="text" class="form-control" name="address" required value="{{ $center->address }}">
+                            <div class="row">
+                                <div class="position-relative form-group col-md-3">
+                                    <label for="address">Đường</label>
+                                    <input type="text" class="form-control" name="street" required value="{{ json_decode($center->address)->street }}">
+                                </div>
+                                <div class="position-relative form-group col-md-3">
+                                    <label for="address">Phường</label>
+                                    <input type="text" class="form-control" name="district" required value="{{ json_decode($center->address)->district }}">
+                                </div>
+                                <div class="position-relative form-group col-md-3">
+                                    <label for="address">Quận</label>
+                                    <input type="text" class="form-control" name="county" required value="{{ json_decode($center->address)->county }}">
+                                </div>
+                                <div class="position-relative form-group col-md-3">
+                                    <label for="address">Thành phố</label>
+                                    <input type="text" class="form-control" name="city" required value="{{ json_decode($center->address)->city }}">
+                                </div>
                             </div>
                             <div class="position-relative form-group">
                                 <label for="phone">Số điện thoại</label>
@@ -29,7 +43,7 @@
                             <div class="row">
                                 <div class="col-md-6 form-group">
                                     <label for="thumbnail">Thumbnail</label>
-                                    <input type="file" class="form-control-file dropify" name="thumbnail" required>
+                                    <input type="file" class="form-control-file dropify" name="thumbnail" required data-default-file="{{ asset($center->thumbnail) }}">
                                 </div>
                                 <div class="col-md-6 form-group">
                                     <label for="pictures">Ảnh</label>

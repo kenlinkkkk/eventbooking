@@ -1,17 +1,17 @@
 @extends('admin.layout.layout')
-@section('title'){{'Add Center'}}@endsection
+@section('title'){{'Add Blog'}}@endsection
 @section('content')
     <div id="user-add">
         <div class="tab-content">
             <div class="col-12">
                 <div class="main-card mb-3 card">
                     <div class="card-header d-flex justify-content-between	">
-                        <h5 class="card-title">Add new Center</h5>
-                        <a href="{{ route('admin.center.index') }}" class="btn btn-sm btn-wide btn-outline-primary btn-icon btn-dashed"><i class="ion-android-arrow-back btn-icon-wrapper"></i> Back</a>
+                        <h5 class="card-title">Add new blog</h5>
+                        <a href="{{ route('admin.blog.index') }}" class="btn btn-sm btn-wide btn-outline-primary btn-icon btn-dashed"><i class="ion-android-arrow-back btn-icon-wrapper"></i> Back</a>
                     </div>
 
                     <div class="card-body">
-                        <form class="" action="{{ route('admin.center.create') }}" method="post" enctype="multipart/form-data">
+                        <form class="" action="{{ route('admin.blog.create') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             <input type="hidden" name="isAddCenter" value="1">
                             <div class="position-relative form-group">
@@ -19,40 +19,26 @@
                                 <input type="text" class="form-control" name="name" required>
                             </div>
                             <div class="row">
-                                <div class="position-relative form-group col-md-3">
-                                    <label for="address">Đường</label>
-                                    <input type="text" class="form-control" name="street" required placeholder="Số 11, Láng">
-                                </div>
-                                <div class="position-relative form-group col-md-3">
-                                    <label for="address">Phường</label>
-                                    <input type="text" class="form-control" name="district" required placeholder="...">
-                                </div>
-                                <div class="position-relative form-group col-md-3">
-                                    <label for="address">Quận</label>
-                                    <input type="text" class="form-control" name="county" required placeholder="...">
-                                </div>
-                                <div class="position-relative form-group col-md-3">
-                                    <label for="address">Thành phố</label>
-                                    <input type="text" class="form-control" name="city" required placeholder="...">
-                                </div>
-                            </div>
-                            <div class="position-relative form-group">
-                                <label for="phone">Số điện thoại</label>
-                                <input type="text" class="form-control" name="phone" required>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6 form-group">
+                                <div class="col-md-12 form-group">
                                     <label for="thumbnail">Thumbnail</label>
                                     <input type="file" class="form-control-file dropify" name="thumbnail" required>
                                 </div>
-                                <div class="col-md-6 form-group">
-                                    <label for="pictures">Ảnh</label>
-                                    <input type="file" class="form-control-file dropify" name="pictures[]" multiple required>
-                                </div>
                             </div>
                             <div class="position-relative form-group">
-                                <label for="description">Mô tả</label>
-                                <textarea class="description" name="description"></textarea>
+                                <label for="description">Nội dung</label>
+                                <textarea class="description" name="content"></textarea>
+                            </div>
+                            <div class="position-relative form-group">
+                                <label for="status">Status</label>
+
+                                <div class="custom-radio custom-control">
+                                    <input type="radio" id="exampleCustomRadio" name="status" checked class="custom-control-input" value="1">
+                                    <label class="custom-control-label" for="exampleCustomRadio">Active</label>
+                                </div>
+                                <div class="custom-radio custom-control">
+                                    <input type="radio" id="exampleCustomRadio2" name="status" class="custom-control-input" value="0">
+                                    <label class="custom-control-label" for="exampleCustomRadio2">Deactive</label>
+                                </div>
                             </div>
                             <div class="position-relative form-group">
                                 <small class="form-text text-muted">All field is required</small>

@@ -17,7 +17,7 @@ class CreateCentersTable extends Migration
             $table->bigIncrements('id');
             $table->string('name', 255);
             $table->string('short_tag', 255);
-            $table->string('address', 255);
+            $table->json('address');
             $table->string('phone', 255);
             $table->string('thumbnail', 255);
             $table->json('pictures');

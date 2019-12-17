@@ -55,6 +55,17 @@ Route::middleware('auth')->group(function () {
             Route::post('update/{id_service}', 'Admin\ServiceController@update')->name('update');
             Route::post('delete/{id_service}', 'Admin\ServiceControoler@delete')->name('delete');
         });
+
+        /** Blog Mânger */
+        Route::prefix('blog')->name('blog.')->group(function () {
+            Route::get('/', 'Admin\BlogController@index')->name('index');
+            Route::get('add', 'Admin\BlogController@add')->name('add');
+            Route::get('edit/{id_blog}', 'Admin\BlogController@edit')->name('edit');
+
+            Route::post('create', 'Admin\BlogController@create')->name('create');
+            Route::post('update/{id_blog}', 'Admin\BlogController@update')->name('update');
+            Route::post('delete/{id_blog}', 'Admin\BlogController@delete')->name('delete');
+        });
     });
 });
 

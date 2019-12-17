@@ -11,6 +11,14 @@
                     </ul>
                 </li>
             @endif
+
+            <li class="app-sidebar__heading">User</li>
+            <li class="">
+                <a href="#"><i class="metismenu-icon pe-7s-config"></i>Manager<i class="metismenu-state-icon pe-7s-angle-down caret-left"></i></a>
+                <ul>
+                    <li><a href="{{ route('admin.blog.index') }}"><i class="metismenu-icon"></i>Blog</a></li>
+                </ul>
+            </li>
         </ul>
     </nav>
 </div>
