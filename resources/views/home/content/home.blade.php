@@ -31,14 +31,14 @@
                                     <option value="1" data-imagesrc="{{ asset('assets/img/icons_search/sightseeing.png') }}">Ba Đình</option>
                                     <option value="2" data-imagesrc="{{ asset('assets/img/icons_search/museums.png') }}">Hoàn Kiếm</option>
                                     <option value="3" data-imagesrc="{{ asset('assets/img/icons_search/historic.png') }}">Tây Hồ</option>
-                                    <option value="4" data-imagesrc="{{ asset('assets/img/icons_search/all_tours.png') }}" selected>Hai Bà Trưng</option>
+                                    <option value="4" data-imagesrc="{{ asset('assets/img/icons_search/all_tours.png') }}">Hai Bà Trưng</option>
                                     <option value="5" data-imagesrc="{{ asset('assets/img/icons_search/sightseeing.png') }}">Long Biên</option>
                                     <option value="6" data-imagesrc="{{ asset('assets/img/icons_search/historic.png') }}">Hoàng Mai</option>
-                                    <option value="7" data-imagesrc="{{ asset('assets/img/icons_search/all_tours.png') }}" selected>Bắc Từ Liêm</option>
+                                    <option value="7" data-imagesrc="{{ asset('assets/img/icons_search/all_tours.png') }}">Bắc Từ Liêm</option>
                                     <option value="8" data-imagesrc="{{ asset('assets/img/icons_search/sightseeing.png') }}">Nam Từ Liêm</option>
                                     <option value="9" data-imagesrc="{{ asset('assets/img/icons_search/museums.png') }}">Hà Đông</option>
                                     <option value="10" data-imagesrc="{{ asset('assets/img/icons_search/historic.png') }}">Thanh Xuân</option>
-                                    <option value="11" data-imagesrc="{{ asset('assets/img/icons_search/all_tours.png') }}" selected>Cầu Giấy</option>
+                                    <option value="11" data-imagesrc="{{ asset('assets/img/icons_search/all_tours.png') }}">Cầu Giấy</option>
                                 </select>
                             </div>
                         </div>

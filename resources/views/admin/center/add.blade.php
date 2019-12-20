@@ -20,20 +20,24 @@
                             </div>
                             <div class="row">
                                 <div class="position-relative form-group col-md-3">
-                                    <label for="address">Đường</label>
-                                    <input type="text" class="form-control" name="street" required placeholder="Số 11, Láng">
-                                </div>
-                                <div class="position-relative form-group col-md-3">
-                                    <label for="address">Phường</label>
-                                    <input type="text" class="form-control" name="district" required placeholder="...">
+                                    <label for="address">Thành phố</label>
+                                    <select name="city" class="form-control">
+                                        @foreach(config('address') as $key => $value)
+                                            <option value="{{ $key }}">{{ $key }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="position-relative form-group col-md-3">
                                     <label for="address">Quận</label>
                                     <input type="text" class="form-control" name="county" required placeholder="...">
                                 </div>
                                 <div class="position-relative form-group col-md-3">
-                                    <label for="address">Thành phố</label>
-                                    <input type="text" class="form-control" name="city" required placeholder="...">
+                                    <label for="address">Phường</label>
+                                    <input type="text" class="form-control" name="district" required placeholder="...">
+                                </div>
+                                <div class="position-relative form-group col-md-3">
+                                    <label for="address">Đường</label>
+                                    <input type="text" class="form-control" name="street" required placeholder="Số 11, Láng">
                                 </div>
                             </div>
                             <div class="position-relative form-group">

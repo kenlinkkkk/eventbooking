@@ -16,4 +16,9 @@ class HomeController extends Controller
     {
         return view('home.content.home');
     }
+
+    public function search(Request  $request)
+    {
+        $data = $request->except('_token');
+    }
 }
